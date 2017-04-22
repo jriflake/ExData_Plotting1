@@ -1,5 +1,5 @@
 ## load data
-inidata <- read.table("household_power_consumption.txt",sep = ";",header = TRUE)
+inidata <- read.table("household_power_consumption.txt",sep = ";",header = TRUE,na.strings = "?")
 inidata$Date <- as.Date(inidata$Date,"%d/%m/%Y")
 inidata$Time <- strptime(inidata$Time,format = "%H:%M:%S")
 inidata$Time <- sub(".* ","",inidata$Time)

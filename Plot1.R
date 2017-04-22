@@ -1,5 +1,5 @@
 ## load data
-inidata <- read.table("household_power_consumption.txt",sep = ";",header = TRUE)
+inidata <- read.table("household_power_consumption.txt",sep = ";",header = TRUE, na.strings = "?")
 inidata$Date <- as.Date(inidata$Date,"%d/%m/%Y")
 data2 <- subset(inidata,Date >= "2007-02-01" & Date <= "2007-02-02")
 rm(inidata)
